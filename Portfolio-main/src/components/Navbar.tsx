@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import RollingText from "./ui/RollingText";
+import { RESUME_PATH } from "../lib/assets";
 
 const SECTION_IDS: Record<string, string> = {
 	Home: "hero",
 	About: "about",
 	Skills: "skills",
 	Projects: "projects",
+	Experience: "experience",
 	Contact: "contact",
 };
 
@@ -34,7 +36,7 @@ const NavButton = ({
 				border
 				${
 					active
-						? "bg-red-500/10 border-red-500/40 text-white"
+						? "bg-blue-500/10 border-blue-500/40 text-white"
 						: "border-transparent text-white/60 hover:text-white hover:bg-white/3"
 				}
 			`}
@@ -104,13 +106,13 @@ const Navbar = () => {
 				<div className="flex items-center gap-4">
 					<div className="w-10 h-10 rounded-full overflow-hidden">
 						<img
-							src="favicon.svg"
+							 src="/favicon.svg"
 							className="w-full h-full object-cover"
 						/>
 					</div>
 
 					<h1 className="text-2xl font-bold text-white">
-						Harsh<span className="text-white/70">.</span>
+						Priyanshu<span className="text-white/70">.</span>
 					</h1>
 				</div>
 
@@ -127,23 +129,20 @@ const Navbar = () => {
 				</div>
 
 				{/* Right */}
-				<button
+				<a
+					href={RESUME_PATH}
+					target="_blank"
+					rel="noreferrer"
 					className="
-						text-red-400
+						text-blue-400
 						font-medium
 						text-base
-						hover:text-red-300
+						hover:text-[#2563EB]
 						transition-colors duration-300
 					"
-					onClick={() =>
-						window.open(
-							"https://github.com/HarshK213/Resume/blob/main/Harsh_Kushwaha_Resume.pdf",
-							"_blank",
-						)
-					}
 				>
 					Resume
-				</button>
+				</a>
 			</div>
 		</div>
 	);

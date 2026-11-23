@@ -1,6 +1,7 @@
-import { ArrowRight, Check, Copy } from "lucide-react";
+import { Check, Copy, Download, FolderOpen } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { RESUME_DOWNLOAD_NAME, RESUME_PATH } from "../lib/assets";
 
 function Hero() {
 	const { scrollY } = useScroll();
@@ -32,7 +33,7 @@ function Hero() {
 
 	const [copied, setCopied] = useState(false);
 	const handleCopy = async () => {
-		await navigator.clipboard.writeText("hkushwaha21305@gmail.com");
+		await navigator.clipboard.writeText("priyanshugupta2569@gmail.com");
 		setCopied(true);
 
 		setTimeout(() => {
@@ -53,38 +54,30 @@ function Hero() {
 					</p>
 
 					<h1 className="text-white font-[Doto] text-3xl sm:text-4xl md:text-5xl lg:text-[70px] font-extrabold leading-none mb-2 text-center px-4">
-						HARSH KUSHWAHA
+						PRIYANSHU GUPTA
 					</h1>
 
-					<div className="bg-red-500 font-mono py-1 px-2 rounded-xl">
-						Full Stack Developer
-					</div>
+					<div className="bg-blue-500 font-mono py-1 px-2 rounded-xl">Computer Science Engineering Student · Software Developer</div>
+					<p className="text-white/60 font-mono text-sm">Full Stack Developer</p>
 
 					<p className="text-white/70 mb-4 text-center text-sm sm:text-base md:text-lg px-4 font-mono">
-						I craft responsive interfaces and robust <br />
-						backends for{" "}
+						I build full-stack applications and solve practical problems with code, <br />
+						turning ideas into{" "}
 						<span className="text-white underline underline-offset-4">
 							real-world products
 						</span>
 						.
 					</p>
 
-					<div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0">
-						<button
-							className="bg-red-500 py-3 px-4 font-semibold rounded-xl flex gap-2 whitespace-nowrap"
-							onClick={() =>
-								document
-									.getElementById("contact")
-									?.scrollIntoView({ behavior: "smooth" })
-							}
-						>
-							Let's Connect <ArrowRight />
-						</button>
+					<div className="flex flex-col sm:flex-row items-center gap-2">
+						<a href="#projects" className="bg-blue-500 hover:bg-blue-600 py-3 px-4 font-semibold rounded-xl flex gap-2 whitespace-nowrap items-center">View Projects <FolderOpen /></a>
+						<a href="#contact" onClick={(event) => { event.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }} className="border border-white/20 bg-white/5 py-3 px-4 font-semibold rounded-xl flex gap-2 items-center text-white">Contact Me</a>
+						<a href={RESUME_PATH} download={RESUME_DOWNLOAD_NAME} className="bg-white/10 border border-white/20 py-3 px-4 font-semibold rounded-xl flex gap-2 items-center text-white"><Download size={18}/> Download Resume</a>
 						<button
 							className="bg-transparent px-3 sm:px-5 py-2 sm:py-0 flex gap-2 items-center text-white/50 hover:text-white/80 font-mono text-xs sm:text-sm md:text-base truncate max-w-[200px] sm:max-w-none"
 							onClick={handleCopy}
 						>
-							<span className="truncate">hkushwaha21305@gmail.com</span>
+							<span className="truncate">priyanshugupta2569@gmail.com</span>
 							{copied ? <Check size={16} /> : <Copy size={16} />}
 						</button>
 					</div>

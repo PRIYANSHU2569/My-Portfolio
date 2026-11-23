@@ -23,7 +23,7 @@ interface ProjectCardProps {
 function ProjectCard({ project }: ProjectCardProps) {
 	return (
 		<SpotlightCard
-			spotlightColor="rgba(239, 68, 68, 0.5)"
+			spotlightColor="rgba(59, 130, 246, 0.5)"
 			className="w-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md"
 		>
 			<div className="p-6 flex flex-col gap-6">

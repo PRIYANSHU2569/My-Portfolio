@@ -1,130 +1,86 @@
-<div align="center">
-  <img src="public/favicon.svg" alt="Logo" width="80" />
+# Priyanshu Gupta — Developer Portfolio
 
-# 🚀 Portfolio — Harsh Kushwaha
+A personal portfolio for Priyanshu Gupta, a Computer Science and Engineering student at VIT Bhopal University and full-stack developer. The site presents education, skills, selected projects, experience, achievements, certifications, and contact details in a responsive dark interface with an electric blue accent.
 
-**✨ A modern, interactive personal portfolio website**  
- Built with React, TypeScript, Vite & Tailwind CSS
+## Features
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer&logoColor=white)](https://motion.dev)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+- Animated WebGL particle background powered by OGL
+- Scroll parallax and section motion powered by Framer Motion
+- Mouse-following spotlight effects on project cards
+- Responsive navigation with active-section tracking
+- About, education, skills, projects, experience, achievements, and contact sections
+- EmailJS contact form with validation, submission feedback, and a spam honeypot
+- Downloadable résumé and replaceable profile photo in `public/`
+- Electric blue accent styling on the existing dark theme
 
-</div>
+## Technology stack
 
----
+- React 19 and TypeScript
+- Vite 7
+- Tailwind CSS 4
+- Framer Motion
+- OGL (WebGL particles)
+- EmailJS Browser SDK (`@emailjs/browser`)
+- Lucide React and React Icons
 
-## 🌟 Overview
+## Getting started
 
-A dark-themed single-page portfolio showcasing **Harsh Kushwaha** — a full-stack developer. Features include an interactive WebGL particle background, smooth scroll animations, spotlight card effects, and a responsive layout.
-
-**[🌐 Live Demo](https://harshk.online)**
-
----
-
-## ✨ Features
-
-| Feature                    | Description                                              |
-| -------------------------- | -------------------------------------------------------- |
-| 🌌 **Particle Background** | Interactive WebGL particles powered by OGL               |
-| 🎬 **Smooth Animations**   | Scroll-triggered parallax & transforms via Framer Motion |
-| 🎯 **Spotlight Effect**    | Mouse-tracking radial gradient on project cards          |
-| 📱 **Fully Responsive**    | Mobile-first design with Tailwind breakpoints            |
-| 🧭 **Smart Navbar**        | Auto-highlights active section via IntersectionObserver  |
-| 🔤 **Rolling Text**        | Animated text flip on navbar buttons                     |
-| 🎨 **Dark Theme**          | Always-on dark mode with custom CSS variables            |
-
----
-
-## 🧰 Tech Stack
-
-| Category      | Technology                         |
-| ------------- | ---------------------------------- |
-| **Framework** | React 19                           |
-| **Language**  | TypeScript 5.9                     |
-| **Bundler**   | Vite 7                             |
-| **Styling**   | Tailwind CSS 4.1, `tw-animate-css` |
-| **Animation** | Framer Motion 12, OGL (WebGL)      |
-| **Icons**     | Lucide React, React Icons          |
-| **Linting**   | ESLint 9                           |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js >= 18
-- npm / yarn / pnpm / bun
-
-### Installation
+Requirements: Node.js 18 or later and npm.
 
 ```bash
-git clone https://github.com/HarshK213/Portfolio.git
-cd Portfolio
 npm install
 ```
 
-### Development
+### Configure EmailJS
+
+Copy `.env.example` to `.env` in the project root, then add the values from your EmailJS account:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+The EmailJS template should use `{{from_name}}`, `{{from_email}}`, `{{subject}}`, and `{{message}}`, with `{{to_email}}` as the recipient and `{{from_email}}` as Reply-To. Restart the Vite server after changing `.env`. Keep `.env` local; it is ignored by Git. Never add EmailJS credentials to this README or commit them.
+
+For Vercel, open the project’s **Settings → Environment Variables** and add the same three variable names and their values for the environments you deploy to. Save the changes and redeploy so the new values are included in the build.
+
+### Run development server
 
 ```bash
 npm run dev
 ```
 
-Opens at `http://localhost:5173` with HMR.
-
-### Build
+### Create and preview a production build
 
 ```bash
 npm run build
-```
-
-Outputs to `dist/`.
-
-### Preview
-
-```bash
 npm run preview
 ```
 
-### Lint
+## Project structure
 
-```bash
-npm run lint
-```
-
----
-
-## 📁 Project Structure
-
-```
+```text
+public/
+  favicon.svg
+  profile.png
+  resume.pdf
 src/
-├── components/       # Reusable UI components
-│   └── ui/           # Particle background, cards, effects
-├── context/          # Theme context provider
-├── lib/              # Utility functions (cn)
-├── section/          # Page sections (Hero, About, Skills, etc.)
-├── App.tsx           # Root component
-├── main.tsx          # Entry point
-└── index.css         # Global styles & Tailwind
+  components/       Shared navigation, footer, and UI components
+  context/          Theme context
+  lib/              Shared asset paths and utilities
+  section/          Hero, about, skills, projects, résumé, and contact
+  App.tsx           Page composition and particle background
+  index.css         Global styles and Tailwind theme
+  main.tsx          React entry point
 ```
 
----
+Replace `public/resume.pdf` or `public/profile.png` to update those assets without changing React components. The résumé downloads as `Priyanshu_Gupta_Resume.pdf`.
 
-## 📬 Contact
+## Contact
 
-**Harsh Kushwaha**
-
-- 📧 hkushwaha21305@gmail.com
-- 💻 [GitHub](https://github.com/HarshK213)
-- 🔗 [LinkedIn](https://www.linkedin.com/in/harsh-kushwaha-697ba3289/)
-- 🐦 [X / Twitter](https://x.com/Akio21305)
-
----
-
-<div align="center">
-  Made with 💙 by Harsh Kushwaha
-</div>
+- Email: [priyanshugupta2569@gmail.com](mailto:priyanshugupta2569@gmail.com)
+- GitHub: [PRIYANSHU2569](https://github.com/PRIYANSHU2569)
+- LinkedIn: [Priyanshu Gupta](https://www.linkedin.com/in/priyanshu-gupta-7474502b7/)
+- LeetCode: [Priyanshugupta2569](https://leetcode.com/u/Priyanshugupta2569/)
+- GeeksforGeeks: [priyanshug9who](https://www.geeksforgeeks.org/user/priyanshug9who/)
